@@ -1,0 +1,53 @@
+\documentclass[12pt]{APA7}
+
+% Use Times New Roman
+\setmainfont{Times New Roman}
+% Indent the first line of a new paragraph by 0.5 inches
+\setlength{\parindent}{0.5in}
+
+
+\input{info}
+
+\begin{document}
+
+% Cover of your essay
+\makecover
+
+\pagenumbering{arabic}
+
+% Include Abstract
+\include{docs/Abstract}
+
+
+% ToC
+{\setlength{\baselineskip}{0.8\baselineskip} % line space
+\setcounter{tocdepth}{2} % Set depth of ToC
+\tableofcontents}
+
+% new page
+\clearpage
+
+% LoF
+\listoffigures
+
+% Include Main Body
+\include{docs/1-Literature Review}
+\include{docs/2-Study 1}
+\include{docs/3-Study 2}
+\include{docs/5-General Discussion}
+\include{docs/6-Conclusion}
+
+% References
+\printbibliography[heading=bibnumbered]
+
+% Re-count tables and figures
+\setcounter{table}{0}
+\setcounter{figure}{0}
+% Add "S" before the number e.g., Table S1, Figure S1
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+% include appendix
+\include{docs/Appendix}
+
+\end{document}
